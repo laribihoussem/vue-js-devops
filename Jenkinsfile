@@ -26,8 +26,8 @@ pipeline {
 
     stage('Build') {
         steps {
-            //sh 'npm install'
-            sh 'npm run build'
+            bat 'npm install'
+            bat 'npm run build'
             archiveArtifacts artifacts: 'dist/**', fingerprint: true
         }
     }
@@ -36,7 +36,7 @@ pipeline {
     stage('Build Docker Image') {
         steps {
             // Build a Docker image for your Vue.js application
-            sh 'docker build -t vue-image .'
+            bat 'docker build -t vue-image .'
         }
         // Optionally, you can push the image to a Docker registry
     }
