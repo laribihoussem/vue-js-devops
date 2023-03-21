@@ -26,7 +26,7 @@ pipeline {
 
     stage('Build') {
         steps {
-            sh 'npm install'
+            //sh 'npm install'
             sh 'npm run build'
             archiveArtifacts artifacts: 'dist/**', fingerprint: true
         }
