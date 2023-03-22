@@ -38,7 +38,7 @@ pipeline {
             // Build a Docker image for your Vue.js application
             bat 'docker build -t vue-image .'
             bat'docker tag vue-image:latest 19982611/vue-image:latest'
-            bat 'push 19982611/vue-image:latest'
+            bat 'docker push 19982611/vue-image:latest'
             //bat 'docker push("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"'
 // docker tag local-image:tagname new-repo:tagname
 // docker push new-repo:tagname
